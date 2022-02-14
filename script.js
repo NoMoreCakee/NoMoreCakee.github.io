@@ -8,9 +8,12 @@ function generatePass() {
     let currentChars='abcdefghijklmnopqrstuvwxyz';
     const uppercasechars = 'ABCDEFGHIJKLMNOPQRSTVWUXYZ';
     const numbers = '1234567890';
-    const symbols = '$!~=()[]<>';
-    let passOut = "";
-    let charToAdd = "";
+    const symbols = "$!~=()[]<>";
+    if (document.querySelector('#length1').value > 128) {
+        document.querySelector('#length1').value = 128;
+        alert("Length must be lower or equal to 128!");
+    }
+    let leng = document.querySelector('#length1').value;
     let chars = ''
 
     if (document.querySelector('#upper').checked) {
@@ -27,17 +30,16 @@ function generatePass() {
 
     chars = currentChars.split('');
     console.log(chars);
-    for(let i = 0; i < 8; i++) {
-        charToAdd = "";
-        let random = Math.floor(Math.random() * currentChars.length);
-        charToAdd += chars[random];
-        passOut += charToAdd;
+    text.innerHTML = "";
+    while (text.innerHTML.length < leng) {
+        text.innerHTML += chars[Math.floor(Math.random() * chars.length)];
     }
 
-    if (passOut.length < 8) {
-        generatePass();
-    }
-    else {
+    /*if (passOut.length == leng) {
+        console.log(passOut.length);
+        console.log(passOut);
         text.innerHTML = passOut;
-    }
+    }*/
+
+    //TODO: Mindenkeppen legyen a kijelolt kovetelmenyekbol a jelszoban legalabb 1
 }

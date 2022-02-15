@@ -32,16 +32,13 @@ function generatePass() {
     console.log(chars);
     text.innerHTML = "";
 
-    let passOut= "";
-    while (text.innerHTML.length < leng) {
+    let passOut = "";
+    for(let i = 0; i<leng; i++) {
         passOut += chars[Math.floor(Math.random() * chars.length)];
     }
-
-    /*if (passOut.length == leng) {
-        console.log(passOut.length);
-        console.log(passOut);
-        text.innerHTML = passOut;
-    }*/
+    
+    console.log(passOut);
+    text.innerText = passOut;
 
     //TODO: Mindenkeppen legyen a kijelolt kovetelmenyekbol a jelszoban legalabb 1
 }

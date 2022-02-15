@@ -31,8 +31,10 @@ function generatePass() {
     chars = currentChars.split('');
     console.log(chars);
     text.innerHTML = "";
+
+    let passOut= "";
     while (text.innerHTML.length < leng) {
-        text.innerHTML += chars[Math.floor(Math.random() * chars.length)];
+        passOut += chars[Math.floor(Math.random() * chars.length)];
     }
 
     /*if (passOut.length == leng) {

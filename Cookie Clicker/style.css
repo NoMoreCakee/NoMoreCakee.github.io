@@ -27,6 +27,17 @@ body{
     font-weight: bolder;
 }
 
+#button {
+    width: 175px;
+}
+
+#moveArea {
+    width: 175px;
+    height: 175px;
+    position: relative;
+    margin: 0 auto;
+}
+
 h1{
     text-shadow: 5px 5px 5px grey;
 }

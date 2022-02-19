@@ -26,5 +26,6 @@ function buyUpgrade() {
     }
 }
 
+
 btn.onclick = clicked;
 upgradeButton.onclick = buyUpgrade;

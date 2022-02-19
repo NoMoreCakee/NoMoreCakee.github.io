@@ -3,7 +3,7 @@ const text = document.getElementById("title");
 let upgradeButton = document.getElementById("upgrade");
 let score = 0;
 let scoreMultiplier = 1;
-let upgradePrices = [10, 50, 100, 250, 700];
+let upgradePrices = [10, 150, 500, 1250, 4000];
 let upgradeIndex = 0;
 let upgradeMultipliers = [1, 2, 4, 6, 8, 10];
 

@@ -116,5 +116,19 @@ body {
 
 #img {
     max-width: 100%;
-    border-radius: 0.7vw;
+}
+
+#list > li {
+    margin: 0;
+    padding: 0;
+}
+
+#list {
+    margin: 0;
+    padding: 0;
+}
+
+#list > li > p {
+    margin: 5px;
+    padding: 0;
 }

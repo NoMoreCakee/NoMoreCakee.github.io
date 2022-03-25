@@ -5,14 +5,14 @@
 
 body {
     background-image: url("background.webp");
-    background: size 100%;
+    background-size: 100%;
 }
 
 .card-title,
 .card-title1,
 .card-title2 {
     font-size: 26px;
-    text-align: center;
+    text-align: left;
     margin: 10px;
 }
 
@@ -22,13 +22,13 @@ body {
     width: 80%;
     margin: 25px auto;
     border: 1px solid blue;
-    border-radius: 4vw;
+    border-radius: 16px;
     /* From https://css.glass */
-    background: rgba(0, 61, 200, 0.45);
+    background: rgba(0, 61, 200, 0.8);
 
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
 }
 
 .card-desc,

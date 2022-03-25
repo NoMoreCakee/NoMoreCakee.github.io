@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FAQ</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="card">
+            <h3 class="card-title">Question 1</h3>
+            <p class="card-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Reiciendis neque obcaecati molestiae delectus architecto?
+                Aliquid id culpa similique voluptates quidem? Beatae ullam nobis
+                voluptas omnis, sit commodi natus temporibus tempora.
+            </p>
+        </div>
+        <div class="card1">
+            <h3 class="card-title1">Question 2</h3>
+            <p class="card-desc1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat asperiores fugiat pariatur? Est, minus error numquam
+                harum, cum velit quod iste labore, reiciendis animi eaque
+                blanditiis excepturi sunt omnis voluptas.
+            </p>
+        </div>
+        <div class="card2">
+            <h3 class="card-title2">Question 3</h3>
+            <p class="card-desc2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+                tenetur mollitia deserunt unde officiis ipsa animi et
+                voluptatibus, voluptatem distinctio cumque delectus explicabo
+                est optio sapiente nisi eveniet ab autem.
+            </p>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $(".card-desc").hide();
+                $(".card-desc1").hide();
+                $(".card-desc2").hide();
+
+                let isVisible = false;
+                $(".card").click(function () {
+                    isVisible
+                        ? $(".card-desc").slideToggle(400)
+                        : $(".card-desc").slideDown(400);
+                    isVisible = !isVisible;
+                });
+
+                let isVisible1 = false;
+                $(".card1").click(function () {
+                    isVisible1
+                        ? $(".card-desc1").slideToggle(400)
+                        : $(".card-desc1").slideDown(400);
+                    isVisible1 = !isVisible1;
+                });
+
+                let isVisible2 = false;
+                $(".card2").click(function () {
+                    isVisible2
+                        ? $(".card-desc2").slideToggle(400)
+                        : $(".card-desc2").slideDown(400);
+                    isVisible2 = !isVisible2;
+                });
+            });
+        </script>
+    </body>
+</html>

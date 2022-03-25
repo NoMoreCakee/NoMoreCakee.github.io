@@ -1,0 +1,39 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+body {
+    background-image: url("background.webp");
+    background: size 100%;
+}
+
+.card-title,
+.card-title1,
+.card-title2 {
+    font-size: 26px;
+    text-align: center;
+    margin: 10px;
+}
+
+.card,
+.card1,
+.card2 {
+    width: 80%;
+    margin: 25px auto;
+    border: 1px solid blue;
+    border-radius: 4vw;
+    /* From https://css.glass */
+    background: rgba(0, 61, 200, 0.45);
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.card-desc,
+.card-desc1,
+.card-desc2 {
+    font-size: 20px;
+    margin: 20px;
+}

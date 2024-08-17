@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+    <title>Fokti Tamás</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $("#software-panel").hide()
+            $("#networking-panel").hide()
+
+            $('#web-button').click(function() {
+                $('#software-panel').slideUp()
+                $('#networking-panel').slideUp()
+                $('#web-panel').slideDown()
+            })
+
+            $('#software-button').click(function() {
+                $("#web-panel").slideUp()
+                $("#networking-panel").slideUp()
+                $('#software-panel').slideDown()
+            })
+
+            $('#networking-button').click(function() {
+                $("#web-panel").slideUp()
+                $("#software-panel").slideUp()
+                $('#networking-panel').slideDown()
+            })
+        })
+
+
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mint: '#00E0A5',
+                        dark: '#252526',
+                        darker: '#151515',
+                        white: '#FFFFFF'
+                    },
+                },
+                fontFamily: {
+                    'default': ["Varela", 'sans-serif']
+                }
+            }
+        }
+    </script>
+
+
+    <style>
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-padding-top: 50px;
+            scroll-behavior: smooth;
+            background: rgb(48,48,47);
+            background: linear-gradient(137deg, rgba(38,38,38,1) 0%, rgba(20,20,20,1) 100%);
+            background-attachment: fixed;
+            height: --webkit-fill-available;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: --webkit-fill-available;
+        }
+
+        .bottom-right {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        .arrow {
+            fill: white;
+        }
+
+        #arrow-box:hover .arrow {
+            fill: #252526;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .snapto {
+                padding-top: 80px;
+            }
+        }
+
+        .snapto {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            height: calc(100vh - 48px);
+        }
+    </style>
+</head>
+<body id="top">
+    <div class="bg-darker sticky top-0 z-50" id="#">
+        <div class="navbar lg:w-1/2 mx-auto">
+            <div class="flex flex-row text-white font-default lg:justify-around lg:text-lg">
+                <a href="#about" class="p-2 w-full text-center hover:bg-white hover:text-dark duration-150">ABOUT ME</a>
+                <a href="#skills" class="p-2 w-full text-center hover:bg-white hover:text-dark duration-150">MY SKILLS</a>
+                <a href="#contact" class="p-2 w-full text-center hover:bg-white hover:text-dark duration-150">CONTACT ME</a>
+            </div>
+        </div>
+    </div>
+        <a href="#top" class="bottom-right border-2 p-3 rounded-full hover:bg-white duration-150 bg-darker" id="arrow-box">
+            <svg class="arrow" fill="#000000" height="25px" width="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
+                <path id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+                    l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+                    C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
+            </svg>
+        </a>
+
+        <!-- Start of Content -->
+    <div class="lg:w-2/3 mx-auto" id="main">
+        <div class="container mx-auto p-5 my-5 snapto">
+            <h1 class="text-5xl text-white font-default">Hello!</h1>
+            <br>
+            <p class="text-xl text-white font-default">I'm <span class="text-mint">Tamás</span>! A Networking student from Hungary with a strong passion for IT security. <br><br>
+            I'm studying to become a professional <span class="text-mint">Penetration Tester</span> and <span class="text-mint">Security Analyst</span>, <br>building on my background in Network Administration and my interest in Cybersecurity.</p>
+            <br>
+            <br>
+            <div class="mx-auto">
+                <a href="#about" class="text-lg font-semibold text-white border-2 px-6 py-2 hover:bg-white hover:text-dark duration-150">ABOUT ME</a>
+            </div>
+        </div>
+        <div class="container mx-auto p-5 my-5 snapto" id="about">
+            <h1 class="text-5xl text-white font-default">About Me</h1>
+            <br>
+            <p class="text-xl text-white font-default">I’ve been passionate about IT since my primary school years, diving into various areas<br> such as <span class="text-mint">Web Development</span> and <span class="text-mint">Software Development</span>. <br><br>In high school, I’m focusing on <span class="text-mint">Network Administration</span> and <span class="text-mint">Infrastructure Building</span>, <br>which has further deepened my understanding of the field. <br><br>
+                Aside from IT, I have interest in playing <span class="text-mint">guitar</span>, <span class="text-mint">exercising</span>, and <span class="text-mint">learning languages</span>. <br>I'm currently learning Japanese to help my brain function and I play guitar to relax after a long day.
+        </p>
+            <br>
+            <br>
+            <div class="mx-auto">
+                <a href="#skills" class="text-lg font-semibold text-white border-2 px-6 py-2 hover:bg-white hover:text-dark duration-150">MY SKILLS</a>
+            </div>
+        </div>
+        <div class="container mx-auto p-5 my-5 snapto" id="skills">
+            <h1 class="text-5xl text-white font-default">My Skills</h1>
+            <br>
+            <p class="text-xl text-white font-default">Throughout my journey, I have tried out several areas of IT and gained skills in them. <br>
+                I have experience with <a class="text-mint hover:bg-white hover:text-darker duration-150" id="web-button">Web Development</a>, <a class="text-mint hover:bg-white hover:text-darker duration-150" id="software-button">Software Development</a>, and <a class="text-mint hover:bg-white hover:text-darker duration-150" id="networking-button">Networking</a>.
+        </p>
+        <br>
+        <div id="web-panel" class="lg:w-3/4 border-2 p-3">
+            <h1 class="text-2xl text-white font-semibold font-default">Web Development</h1><br>
+            <p class="text-xl text-white font-default">I've started my Web Development journey in primary school where I first learnt <span class="text-mint">HTML</span> and <span class="text-mint">CSS</span>.
+            Later on, I've continued by learning <span class="text-mint">JavaScript</span>.</p>
+            <br>
+            <p class="text-xl text-white font-default">In my high school years, I gained experience using <span class="text-mint">VueJS</span>, <span class="text-mint">TailwindCSS</span> and <span class="text-mint">MySQL</span>.</p>
+            <p class="text-xl text-white font-default">These skills allow me to build websites targeted for small traffic.</p>
+        </div>
+        <div id="software-panel" class="lg:w-3/4 border-2 p-3">
+            <h1 class="text-2xl text-white font-semibold font-default">Software Development</h1><br>
+            <p class="text-xl text-white font-default">Aside from learning Web Development, I have also dived into Software Development in my school years. <br><br> Starting with <span class="text-mint">C#</span>, then moving on to <span class="text-mint">Python</span>, I have gained experience building CLI and backend tools. Later, I used my C# skills for developing games in <span class="text-mint">Unity</span>.</p>
+        </div>
+        <div id="networking-panel" class="lg:w-3/4 border-2 p-3">
+            <h1 class="text-2xl text-white font-semibold font-default">Networking</h1><br>
+            <p class="text-xl text-white font-default">I got into networking in my <span class="text-mint">high school</span> years. From learning the basics of the Internet, I'm heading towards passing the <span class="text-mint">CCNA exam</span>.</p>
+            <br>
+            <p class="text-xl text-white font-default">I'm confident with building <span class="text-mint">small to medium infrastructures</span> with <span class="text-mint">security</span> in mind, thanks to much practice I know behind my back.</p>
+        </div>
+            <br>
+            <div class="mx-auto">
+                <a href="#contact" class="text-lg font-semibold text-white border-2 px-6 py-2 hover:bg-white hover:text-dark duration-150">CONTACT ME</a>
+            </div>
+        </div>
+        <div class="container mx-auto p-5 my-5 snapto" id="contact">
+            <h1 class="text-5xl text-white font-default">Contact Me</h1>
+            <br>
+            <p class="text-xl text-white font-default">If you have any inqueries, please get in touch with me on the following platforms:</p>
+            <br>
+            <br>
+            <div class="mx-auto">
+                <a href="#top" class="text-lg font-semibold text-white border-2 px-6 py-2 hover:bg-white hover:text-dark duration-150">BACK TO TOP</a>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

@@ -65,12 +65,16 @@
     <style>
         html {
             scroll-snap-type: y mandatory;
-            scroll-padding-top: 70px;
+            scroll-padding-top: calc((100vh - 48px) / 4);
             scroll-behavior: smooth;
             background: rgb(48,48,47);
             background: linear-gradient(137deg, rgba(38,38,38,1) 0%, rgba(20,20,20,1) 100%);
             background-attachment: fixed;
             height: --webkit-fill-available;
+        }
+
+        .about-me {
+            margin-top: calc((100vh - 48px) / 4);
         }
 
         body {
@@ -95,10 +99,13 @@
             .height-max {
                 padding-top: 80px;
             }
+            html {
+                scroll-padding-top: 60px;
+            }
         }
 
         .height-max {
-            min-height: calc(100vh - 48px);
+            min-height: calc(100vh);
         }
 
         .snapto {
@@ -127,23 +134,27 @@
 
         <!-- Start of Content -->
     <div class="lg:w-2/3 mx-auto" id="main">
-        <div class="container mx-auto p-5 my-5 height-max">
-            <div class="snapto">
-                <h1 class="text-5xl text-white font-default">Hello!</h1>
+        <div class="lg:flex height-max" id="top">
+            <div class="container mx-auto p-5 my-5 self-center">
+                <div class="snapto">
+                    <div>
+                        <h1 class="text-5xl text-white font-default">Hello!</h1>
+                    <br>
+                    <p class="text-xl text-white font-default">I'm <span class="text-mint">Tamás</span>! A Networking student from Hungary with a strong passion for IT security. <br><br>
+                    I'm studying to become a professional <span class="text-mint">Penetration Tester</span> and <span class="text-mint">Security Analyst</span>, <br>building on my background in Network Administration and my interest in Cybersecurity.</p>
+                    </div>
+                </div><br>
                 <br>
-                <p class="text-xl text-white font-default">I'm <span class="text-mint">Tamás</span>! A Networking student from Hungary with a strong passion for IT security. <br><br>
-                I'm studying to become a professional <span class="text-mint">Penetration Tester</span> and <span class="text-mint">Security Analyst</span>, <br>building on my background in Network Administration and my interest in Cybersecurity.</p>
-                
-            </div><br>
-            <br>
-            <div class="mx-auto">
-                <a href="#about" class="text-lg font-semibold text-white border-2 px-6 py-2 hover:bg-white hover:text-dark duration-150">ABOUT ME</a>
+                <div class="mx-auto">
+                    <a href="#about" class="text-lg font-semibold text-white border-2 px-6 py-2 hover:bg-white hover:text-dark duration-150">ABOUT ME</a>
+                </div>
             </div>
         </div>
 
         <!-- About -->
 
-        <div class="container mx-auto p-5 my-5 height-max" id="about">
+        <div class="lg:flex height-max" id="about">
+            <div class="container mx-auto p-5 my-5 self-center">
             <div class="snapto">
                 <h1 class="text-5xl text-white font-default">About Me</h1>
                 <br>
@@ -156,11 +167,13 @@
             <div class="mx-auto">
                 <a href="#skills" class="text-lg font-semibold text-white border-2 px-6 py-2 hover:bg-white hover:text-dark duration-150">MY SKILLS</a>
             </div>
+            </div>
         </div>
 
         <!-- Skills -->
         
-        <div class="container mx-auto p-5 my-5 height-max" id="skills">
+        <div class="lg:flex height-max" id="skills">
+            <div class="container mx-auto p-5 my-5 self-center">
             <div class="snapto">
                 <h1 class="text-5xl text-white font-default">My Skills</h1>
                     <br>
@@ -193,10 +206,12 @@
                 <a href="#contact" class="text-lg font-semibold text-white border-2 px-6 py-2 hover:bg-white hover:text-dark duration-150">CONTACT ME</a>
             </div>
         </div>
+        </div>
 
         <!-- Contact -->
 
-        <div class="container mx-auto p-5 my-5 height-max" id="contact">
+        <div class="lg:flex height-max" id="contact">
+            <div class="container mx-auto p-5 my-5 self-center">
             <div class="snapto">
                 <h1 class="text-5xl text-white font-default">Contact Me</h1>
                 <br>
@@ -211,7 +226,7 @@
             </div>
         </div>
     </div>
-
+    </div>
     
 </body>
 </html>

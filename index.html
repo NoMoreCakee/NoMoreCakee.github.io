@@ -13,22 +13,32 @@
         $(document).ready(function() {
             $("#software-panel").hide()
             $("#networking-panel").hide()
+            $('#web-button').addClass('bg-white').addClass('text-darker')
 
             $('#web-button').click(function() {
-                $('#software-panel').slideUp()
                 $('#networking-panel').slideUp()
+                $('#software-panel').slideUp()
+                $('#web-button').addClass('bg-white').addClass('text-darker')
+                $('#software-button').removeClass('bg-white').removeClass('text-darker')
+                $('#networking-button').removeClass('bg-white').removeClass('text-darker')
                 $('#web-panel').slideDown()
             })
 
             $('#software-button').click(function() {
                 $("#web-panel").slideUp()
                 $("#networking-panel").slideUp()
+                $('#software-button').addClass('bg-white').addClass('text-darker')
+                $('#web-button').removeClass('bg-white').removeClass('text-darker')
+                $('#networking-button').removeClass('bg-white').removeClass('text-darker')
                 $('#software-panel').slideDown()
             })
 
             $('#networking-button').click(function() {
                 $("#web-panel").slideUp()
                 $("#software-panel").slideUp()
+                $('#networking-button').addClass('bg-white').addClass('text-darker')
+                $('#software-button').removeClass('bg-white').removeClass('text-darker')
+                $('#web-button').removeClass('bg-white').removeClass('text-darker')
                 $('#networking-panel').slideDown()
             })
         })
@@ -55,7 +65,7 @@
     <style>
         html {
             scroll-snap-type: y mandatory;
-            scroll-padding-top: 50px;
+            scroll-padding-top: 70px;
             scroll-behavior: smooth;
             background: rgb(48,48,47);
             background: linear-gradient(137deg, rgba(38,38,38,1) 0%, rgba(20,20,20,1) 100%);
@@ -82,15 +92,18 @@
         }
 
         @media only screen and (max-width: 600px) {
-            .snapto {
+            .height-max {
                 padding-top: 80px;
             }
+        }
+
+        .height-max {
+            min-height: calc(100vh - 48px);
         }
 
         .snapto {
             scroll-snap-align: start;
             scroll-snap-stop: always;
-            height: calc(100vh - 48px);
         }
     </style>
 </head>
@@ -114,63 +127,83 @@
 
         <!-- Start of Content -->
     <div class="lg:w-2/3 mx-auto" id="main">
-        <div class="container mx-auto p-5 my-5 snapto">
-            <h1 class="text-5xl text-white font-default">Hello!</h1>
-            <br>
-            <p class="text-xl text-white font-default">I'm <span class="text-mint">Tamás</span>! A Networking student from Hungary with a strong passion for IT security. <br><br>
-            I'm studying to become a professional <span class="text-mint">Penetration Tester</span> and <span class="text-mint">Security Analyst</span>, <br>building on my background in Network Administration and my interest in Cybersecurity.</p>
-            <br>
+        <div class="container mx-auto p-5 my-5 height-max">
+            <div class="snapto">
+                <h1 class="text-5xl text-white font-default">Hello!</h1>
+                <br>
+                <p class="text-xl text-white font-default">I'm <span class="text-mint">Tamás</span>! A Networking student from Hungary with a strong passion for IT security. <br><br>
+                I'm studying to become a professional <span class="text-mint">Penetration Tester</span> and <span class="text-mint">Security Analyst</span>, <br>building on my background in Network Administration and my interest in Cybersecurity.</p>
+                
+            </div><br>
             <br>
             <div class="mx-auto">
                 <a href="#about" class="text-lg font-semibold text-white border-2 px-6 py-2 hover:bg-white hover:text-dark duration-150">ABOUT ME</a>
             </div>
         </div>
-        <div class="container mx-auto p-5 my-5 snapto" id="about">
-            <h1 class="text-5xl text-white font-default">About Me</h1>
-            <br>
-            <p class="text-xl text-white font-default">I’ve been passionate about IT since my primary school years, diving into various areas<br> such as <span class="text-mint">Web Development</span> and <span class="text-mint">Software Development</span>. <br><br>In high school, I’m focusing on <span class="text-mint">Network Administration</span> and <span class="text-mint">Infrastructure Building</span>, <br>which has further deepened my understanding of the field. <br><br>
-                Aside from IT, I have interest in playing <span class="text-mint">guitar</span>, <span class="text-mint">exercising</span>, and <span class="text-mint">learning languages</span>. <br>I'm currently learning Japanese to help my brain function and I play guitar to relax after a long day.
-        </p>
+
+        <!-- About -->
+
+        <div class="container mx-auto p-5 my-5 height-max" id="about">
+            <div class="snapto">
+                <h1 class="text-5xl text-white font-default">About Me</h1>
+                <br>
+                <p class="text-xl text-white font-default">I’ve been passionate about IT since my primary school years, diving into various areas<br> such as <span class="text-mint">Web Development</span> and <span class="text-mint">Software Development</span>. <br><br>In high school, I’m focusing on <span class="text-mint">Network Administration</span> and <span class="text-mint">Infrastructure Building</span>, <br>which has further deepened my understanding of the field. <br><br>
+                    Aside from IT, I have interest in playing <span class="text-mint">guitar</span>, <span class="text-mint">exercising</span>, and <span class="text-mint">learning languages</span>. <br>I'm currently learning Japanese to help my brain function and I play guitar to relax after a long day.
+                </p>
+            </div>
             <br>
             <br>
             <div class="mx-auto">
                 <a href="#skills" class="text-lg font-semibold text-white border-2 px-6 py-2 hover:bg-white hover:text-dark duration-150">MY SKILLS</a>
             </div>
         </div>
-        <div class="container mx-auto p-5 my-5 snapto" id="skills">
-            <h1 class="text-5xl text-white font-default">My Skills</h1>
+
+        <!-- Skills -->
+        
+        <div class="container mx-auto p-5 my-5 height-max" id="skills">
+            <div class="snapto">
+                <h1 class="text-5xl text-white font-default">My Skills</h1>
+                    <br>
+                    <p class="text-xl text-white font-default">Throughout my journey, I have tried out several areas of IT and gained skills in them. <br>
+                        I have experience with <a class="text-mint hover:bg-white hover:text-darker duration-150" id="web-button"> Web Development</a>, <a class="text-mint hover:bg-white hover:text-darker duration-150" id="software-button">Software Development</a>, and <a class="text-mint hover:bg-white hover:text-darker duration-150" id="networking-button">Networking</a>.
+                </p>
+                <br>
+                <div id="web-panel" class="lg:w-3/4 border-2 p-3">
+                    <h1 class="text-2xl text-white font-semibold font-default">Web Development</h1><br>
+                    <p class="text-xl text-white font-default">I've started my Web Development journey in primary school where I first learnt <span class="text-mint">HTML</span> and <span class="text-mint">CSS</span>.
+                    Later on, I've continued by learning <span class="text-mint">JavaScript</span>.</p>
+                    <br>
+                    <p class="text-xl text-white font-default">In my high school years, I gained experience using <span class="text-mint">VueJS</span>, <span class="text-mint">TailwindCSS</span> and <span class="text-mint">MySQL</span>.</p>
+                    <p class="text-xl text-white font-default">These skills allow me to build websites targeted for small traffic.</p>
+                </div>
+                <div id="software-panel" class="lg:w-3/4 border-2 p-3">
+                    <h1 class="text-2xl text-white font-semibold font-default">Software Development</h1><br>
+                    <p class="text-xl text-white font-default">Aside from learning Web Development, I have also dived into Software Development in my school years. <br><br> Starting with <span class="text-mint">C#</span>, then moving on to <span class="text-mint">Python</span>, I have gained experience building CLI and backend tools. Later, I used my C# skills for developing games in <span class="text-mint">Unity</span>.</p>
+                </div>
+                <div id="networking-panel" class="lg:w-3/4 border-2 p-3">
+                    <h1 class="text-2xl text-white font-semibold font-default">Networking</h1><br>
+                    <p class="text-xl text-white font-default">I got into networking in my <span class="text-mint">high school</span> years. From learning the basics of the Internet, I'm heading towards passing the <span class="text-mint">CCNA exam</span>.</p>
+                    <br>
+                    <p class="text-xl text-white font-default">I'm confident with building <span class="text-mint">small to medium infrastructures</span> with <span class="text-mint">security</span> in mind, thanks to much practice I know behind my back.</p>
+                </div>
+            </div>
             <br>
-            <p class="text-xl text-white font-default">Throughout my journey, I have tried out several areas of IT and gained skills in them. <br>
-                I have experience with <a class="text-mint hover:bg-white hover:text-darker duration-150" id="web-button">Web Development</a>, <a class="text-mint hover:bg-white hover:text-darker duration-150" id="software-button">Software Development</a>, and <a class="text-mint hover:bg-white hover:text-darker duration-150" id="networking-button">Networking</a>.
-        </p>
-        <br>
-        <div id="web-panel" class="lg:w-3/4 border-2 p-3">
-            <h1 class="text-2xl text-white font-semibold font-default">Web Development</h1><br>
-            <p class="text-xl text-white font-default">I've started my Web Development journey in primary school where I first learnt <span class="text-mint">HTML</span> and <span class="text-mint">CSS</span>.
-            Later on, I've continued by learning <span class="text-mint">JavaScript</span>.</p>
-            <br>
-            <p class="text-xl text-white font-default">In my high school years, I gained experience using <span class="text-mint">VueJS</span>, <span class="text-mint">TailwindCSS</span> and <span class="text-mint">MySQL</span>.</p>
-            <p class="text-xl text-white font-default">These skills allow me to build websites targeted for small traffic.</p>
-        </div>
-        <div id="software-panel" class="lg:w-3/4 border-2 p-3">
-            <h1 class="text-2xl text-white font-semibold font-default">Software Development</h1><br>
-            <p class="text-xl text-white font-default">Aside from learning Web Development, I have also dived into Software Development in my school years. <br><br> Starting with <span class="text-mint">C#</span>, then moving on to <span class="text-mint">Python</span>, I have gained experience building CLI and backend tools. Later, I used my C# skills for developing games in <span class="text-mint">Unity</span>.</p>
-        </div>
-        <div id="networking-panel" class="lg:w-3/4 border-2 p-3">
-            <h1 class="text-2xl text-white font-semibold font-default">Networking</h1><br>
-            <p class="text-xl text-white font-default">I got into networking in my <span class="text-mint">high school</span> years. From learning the basics of the Internet, I'm heading towards passing the <span class="text-mint">CCNA exam</span>.</p>
-            <br>
-            <p class="text-xl text-white font-default">I'm confident with building <span class="text-mint">small to medium infrastructures</span> with <span class="text-mint">security</span> in mind, thanks to much practice I know behind my back.</p>
-        </div>
             <br>
             <div class="mx-auto">
                 <a href="#contact" class="text-lg font-semibold text-white border-2 px-6 py-2 hover:bg-white hover:text-dark duration-150">CONTACT ME</a>
             </div>
         </div>
-        <div class="container mx-auto p-5 my-5 snapto" id="contact">
-            <h1 class="text-5xl text-white font-default">Contact Me</h1>
-            <br>
-            <p class="text-xl text-white font-default">If you have any inqueries, please get in touch with me on the following platforms:</p>
+
+        <!-- Contact -->
+
+        <div class="container mx-auto p-5 my-5 height-max" id="contact">
+            <div class="snapto">
+                <h1 class="text-5xl text-white font-default">Contact Me</h1>
+                <br>
+                <p class="text-xl text-white font-default">If you have any inqueries, please get in touch with me on the following platforms:</p>
+                <li class="text-xl text-white my-4 font-default">Email: <a href="mailto::fokti.tamass@gmail.com" class="text-mint">fokti.tamass@gmail.com</a></li>
+                <li class="text-xl text-white my-4 font-default">GitHub: <a href="https://github.com/NoMoreCakee" target="_blank" class="text-mint">NoMoreCakee</a></li>
+            </div>
             <br>
             <br>
             <div class="mx-auto">
